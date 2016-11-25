@@ -20,6 +20,8 @@ for(int i = 1; i<argc; ++i){
     	file.imbue(std::locale(std::locale(), new letter_only()));
     	try{
 	     	while(file>>newword){
+	     		std::transform(newword.begin(), newword.end(), newword.begin(), ::tolower); 
+	     		//tolower seems to be deprecated in new standards 
     			element_exist = false;
     			node found_element;
 	     		node n(newword);
